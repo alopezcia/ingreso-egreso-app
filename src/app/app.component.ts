@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import 'firebase/firestore';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +10,10 @@ import { AuthService } from './auth/auth.service';
 })
 export class AppComponent implements OnInit {
   title = 'ingresoEgresoApp';
+
   constructor(public authService: AuthService ){}
 
-  ngOnInit(){
+  ngOnInit() {
     this.authService.initAuthListener();
   }
 }
